@@ -9,11 +9,11 @@ class TinTuc extends Model
     //
     protected $table="TinTuc";
 
-    public funtion loaitin(){
+    public function loaitin(){
     	return $this->belongsTo('App\LoaiTin','idLoaiTin','id');
     }
 
-    public funtion comment(){
+    public function comment(){
     	return  $this->hasMany('App\Comment','idTinTuc','id');
     }
 }
