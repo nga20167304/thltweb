@@ -99,7 +99,6 @@ class UserController extends Controller
     }
 
     public function getXoa($id){
-    	
     	$user = User::find($id);
     	$user->delete();
     	return redirect('admin/user/danhsach')->with('thongbao','Xóa người dùng thành công!');
