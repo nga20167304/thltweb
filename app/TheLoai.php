@@ -10,12 +10,12 @@ class TheLoai extends Model
     protected $table="TheLoai";
 
     //Liên kết theLoai với LoaiTin
-    public funtion loaitin(){
+    public function loaitin(){
     	return $this->hasMany('App\LoaiTin','idTheLoai','id');
     }
 
     //Liên kết TheLoai với TinTuc
-    public funtion tintuc(){
+    public function tintuc(){
     	return $this->hasManyThrough(
     		'App\TinTuc','App\LoaiTin','idTheLoai','idLoaiTin','id');
     }
