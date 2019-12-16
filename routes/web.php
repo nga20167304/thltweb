@@ -68,5 +68,28 @@ Route::group(['prefix'=>'admin'],function(){
 
 		Route::get('them','UserController@getThem');
 	});
+});
+
 
 });
+
+// =======
+// Route::get('try',function(){
+// 	$theloai=TheLoai::find(1);
+// 	foreach($theloai->loaitin as $loaitin){
+// 		echo $loaitin->Ten."<br>";
+// 	}
+// });
+
+// Route::group(['prefix'=>'loaitin'],function(){
+
+// 	Route::get('danhsach','LoaiTinController@getDanhSach');
+
+// 	Route::get('sua/{id}','LoaiTinController@getSua');
+// 	Route::post('sua/{id}','LoaiTinController@postSua');
+// 	Route::get('them','LoaiTinController@getThem');
+// 	Route::post('them','LoaiTinController@postThem');
+// 	Route::get('xoa/{id}','LoaiTinController@postXoa');
+// });
+// >>>>>>> loai tin
+
