@@ -12,6 +12,7 @@
 */
 
 use App\TheLoai;
+use App\LoaiTin;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -34,12 +35,18 @@ Route::group(['prefix'=>'admin'],function(){
 	});
 
 	Route::group(['prefix'=>'loaitin'],function(){
-		
-		Route::get('danhsach','LoaiTinController@getDanhSach');
 
-		Route::get('sua','LoaiTinController@getSua');
+		Route::get('danhsach','LoaiTinController@getDanhSach');
+		
+		Route::get('sua/{id}','LoaiTinController@getSua');
+
+		Route::post('sua/{id}','LoaiTinController@postSua');
 
 		Route::get('them','LoaiTinController@getThem');
+
+		Route::post('them','LoaiTinController@postThem');
+		
+		Route::get('xoa/{id}','LoaiTinController@getXoa');
 	});
 
 	Route::group(['prefix'=>'slide'],function(){
