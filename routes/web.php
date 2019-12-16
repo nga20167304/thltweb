@@ -58,10 +58,15 @@ Route::group(['prefix'=>'admin'],function(){
 		
 		Route::get('danhsach','UserController@getDanhSach');
 
-		Route::get('sua','UserController@getSua');
+		Route::get('sua/{id}','UserController@getSua');
+		Route::post('sua/{id}','UserController@postSua');
 
+		Route::post('them','UserController@postThem');
 		Route::get('them','UserController@getThem');
+
+		Route::get('xoa/{id}','UserController@getXoa');
 	});
+
 
 	Route::group(['prefix'=>'slide'],function(){
 		Route::get('danhsach','SlideController@getDanhSach');
@@ -76,7 +81,6 @@ Route::group(['prefix'=>'admin'],function(){
 	});
 });
 
-// =======
 // Route::get('try',function(){
 // 	$theloai=TheLoai::find(1);
 // 	foreach($theloai->loaitin as $loaitin){
@@ -95,3 +99,4 @@ Route::group(['prefix'=>'admin'],function(){
 // 	Route::get('xoa/{id}','LoaiTinController@postXoa');
 // });
 // >>>>>>> loai tin
+
