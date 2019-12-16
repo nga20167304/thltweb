@@ -13,6 +13,7 @@
                     </div>
                     <!-- /.col-lg-12 -->
                     <div class="col-lg-7" style="padding-bottom:120px">
+
                         <form action="" method="POST">
                             <div class="form-group">
                                 <label>Category Parent</label>
