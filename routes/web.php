@@ -78,7 +78,6 @@ Route::group(['prefix'=>'admin'],function(){
 });
 
 
-});
 
 // =======
 // Route::get('try',function(){
