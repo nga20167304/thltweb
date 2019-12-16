@@ -12,10 +12,10 @@
 */
 
 use App\TheLoai;
-
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::group(['prefix'=>'admin'],function(){
 	Route::group(['prefix'=>'theloai'],function(){
@@ -62,4 +62,4 @@ Route::group(['prefix'=>'admin'],function(){
 
 		Route::get('them','UserController@getThem');
 	});
-});
+
