@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::group(['prefix'=>'admin'],function(){
 	Route::group(['prefix'=>'theloai'],function(){
-		
+
 		Route::get('danhsach','TheLoaiController@getDanhSach');
 
 		Route::get('sua','TheLoaiController@getSua');
@@ -28,7 +28,7 @@ Route::group(['prefix'=>'admin'],function(){
 	});
 
 	Route::group(['prefix'=>'loaitin'],function(){
-		
+
 		Route::get('danhsach','LoaiTinController@getDanhSach');
 
 		Route::get('sua','LoaiTinController@getSua');
@@ -37,16 +37,19 @@ Route::group(['prefix'=>'admin'],function(){
 	});
 
 	Route::group(['prefix'=>'slide'],function(){
-		
+
 		Route::get('danhsach','SlideController@getDanhSach');
 
 		Route::get('sua','SlideController@getSua');
+		Route::post('sua', 'SlideController@postSua');
 
 		Route::get('them','SlideController@getThem');
+
+		Route::get('xoa', 'SlideController@getXoa');
 	});
 
 	Route::group(['prefix'=>'tintuc'],function(){
-		
+
 		Route::get('danhsach','TinTucController@getDanhSach');
 
 		Route::get('sua','TinTucController@getSua');
@@ -55,7 +58,7 @@ Route::group(['prefix'=>'admin'],function(){
 	});
 
 	Route::group(['prefix'=>'user'],function(){
-		
+
 		Route::get('danhsach','UserController@getDanhSach');
 
 		Route::get('sua/{id}','UserController@getSua');

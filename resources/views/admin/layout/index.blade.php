@@ -35,7 +35,7 @@
         @include('admin.layout.header')
 
         @yield('content')
-  
+
     </div>
     <!-- /#wrapper -->
 
@@ -62,6 +62,12 @@
                 responsive: true
         });
     });
+    </script>
+    <script src="https://cdn.tiny.cloud/1/jdkm7gpmukpuubpq4gt7uf5bsusxk792qg6bs5a6sfu77dnr/tinymce/5/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: '#content_editor'
+        });
     </script>
     @yield('script')
 </body>

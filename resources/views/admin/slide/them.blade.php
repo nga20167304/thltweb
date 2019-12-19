@@ -33,12 +33,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Nội dung</label>
-                                <textarea name="NoiDung" id="demo" class="form-control ckeditor" rows="3"></textarea>
+                                <textarea name="NoiDung" id="content_editor" class="form-control ckeditor" rows="3"></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Link</label>
                                 <input class="form-control" name="link" placeholder="Nhập link"/>
-                            </div>                           
+                            </div>
                             <div class="form-group">
                                 <label>Hình ảnh</label>
                                 <input type="file" name="Hinh" class="form-control" />
