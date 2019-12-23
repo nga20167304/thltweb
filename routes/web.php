@@ -94,22 +94,15 @@ Route::group(['prefix'=>'admin'],function(){
 	});
 });
 
-// Route::get('try',function(){
-// 	$theloai=TheLoai::find(1);
-// 	foreach($theloai->loaitin as $loaitin){
-// 		echo $loaitin->Ten."<br>";
-// 	}
-// });
+Route::get('/dangnhap', 'PagesController@getDangNhap');
+Route::post('/dangnhap', 'PagesController@postDangNhap');
+Route::get('/dangky', 'PagesController@getDangKy');
+Route::post('/dangky', 'PagesController@postDangKy');
+Route::get('/dangxuat', 'PagesController@getDangXuat');
+Route::get('/nguoidung', 'PagesController@getNguoiDung');
+Route::post('/nguoidung', 'PagesController@postNguoiDung');
 
-// Route::group(['prefix'=>'loaitin'],function(){
+Route::get('/trangchu', 'PagesController@getTrangChu');
 
-// 	Route::get('danhsach','LoaiTinController@getDanhSach');
-
-// 	Route::get('sua/{id}','LoaiTinController@getSua');
-// 	Route::post('sua/{id}','LoaiTinController@postSua');
-// 	Route::get('them','LoaiTinController@getThem');
-// 	Route::post('them','LoaiTinController@postThem');
-// 	Route::get('xoa/{id}','LoaiTinController@postXoa');
-// });
-// >>>>>>> loai tin
+Route::post('/timkiem','PagesController@timkiem');
 
