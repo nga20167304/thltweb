@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type ="email" class="form-control" name="email" placeholder="Nhập địa chỉ email" value="{{$user->email}}" />
+                                <input type ="email" class="form-control" name="email" placeholder="Nhập địa chỉ email" value="{{$user->email}}" readonly=""/>
                             </div>
                             
                             <div class="form-group">
