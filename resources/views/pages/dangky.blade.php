@@ -32,7 +32,7 @@
 
             <form class="login100-form validate-form" action="/dangky" method="post">
 					<span class="login100-form-title">
-						Member Login
+						Member Sign up
 					</span>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
@@ -83,8 +83,8 @@
 						<span class="txt1">
 							Forgot
 						</span>
-                    <a class="txt2" href="#">
-                        Username / Password?
+                    <a class="txt2" href="{{url('password/reset')}}">
+                        Password?
                     </a>
                 </div>
 
