@@ -21,9 +21,20 @@ class PagesController extends Controller
         View::share('slides', $slides);
     }
 
-    public function getTrangChu()
-    {
-        return view('pages.trangchu');
+    public function home(){
+        $theloai=TheLoai::all();
+        return view('pages.home',['theloai'=>$theloai]);
+    }
+
+    public function contact(){
+        $theloai=TheLoai::all();
+        return view('pages.contact',['theloai'=>$theloai]);
+    }
+
+    public function loaitin($id){
+        $loaitin=LoaiTin::find($id);
+        $tintuc=TinTuc::where('idLoaiTin',$id)->paginate(5);
+        return view('pages.loaitin',['loaitin'=>$loaitin,'tintuc'=>$tintuc]);
     }
 
     public function getDangNhap()
@@ -138,5 +149,4 @@ class PagesController extends Controller
             ->orWhere('NoiDung', 'like', "%$tukhoa%")
             ->take(30)->paginate(5);
         return view('pages.timkiem', ['tintuc' => $tintuc, 'tukhoa' => $tukhoa]);
-    }
-}
+

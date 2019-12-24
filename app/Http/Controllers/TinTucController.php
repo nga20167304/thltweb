@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\LoaiTin;
 use App\TheLoai;
 use App\TinTuc;
+use App\Comment;
 
 class TinTucController extends Controller
 {
@@ -51,7 +53,7 @@ class TinTucController extends Controller
             }
             $name=$file->getClientOriginalName();
             $Hinh = str_random(4)."_".$name;
-            while(file_exists("upload/tintuc/."$Hinh))
+            while(file_exists("upload/tintuc/" .$Hinh))
             {
                 $Hinh = str_random(4)."_".$name;
             }
@@ -77,7 +79,7 @@ class TinTucController extends Controller
     }
 
     public function postSua(Request $request,$id){
-        tintuc=TinTuc::find($id);
+        $tintuc=TinTuc::find($id);
         $this->validate($request,[
             'LoaiTin'=>'required',
             'TieuDe'=>'required|min:3|unique:TinTuc,TieuDe',
@@ -107,7 +109,7 @@ class TinTucController extends Controller
             }
             $name=$file->getClientOriginalName();
             $Hinh = str_random(4)."_".$name;
-            while(file_exists("upload/tintuc/."$Hinh))
+            while(file_exists("upload/tintuc/" .$Hinh))
             {
                 $Hinh = str_random(4)."_".$name;
             }
