@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use Illuminate\Support\Str;
 use App\LoaiTin;
 use App\TheLoai;
 
@@ -71,6 +73,6 @@ class LoaiTinController extends Controller
         $loaitin=LoaiTin::find($id);
         $loaitin->delete();
 
-        return redirect('admin/loaitin/danhsach')->with('thongbao','Bạn đã xóa thành công');
+        return redirect('admin/loaitin/danhsach') ->with('thongbao','Bạn đã xóa thành công');
     }
 }

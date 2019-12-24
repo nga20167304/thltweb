@@ -41,9 +41,15 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 		Route::get('danhsach','LoaiTinController@getDanhSach');
 
-		Route::get('sua','LoaiTinController@getSua');
+		Route::get('sua/{id}','LoaiTinController@getSua');
+
+		Route::post('sua/{id}','LoaiTinController@postSua');
 
 		Route::get('them','LoaiTinController@getThem');
+
+		Route::post('them','LoaiTinController@postThem');
+
+		Route::get('xoa/{id}','LoaiTinController@getXoa');
 	});
 
 	Route::group(['prefix'=>'slide'],function(){
@@ -70,7 +76,12 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 		Route::post('them','TinTucController@postThem');
 
-		Route::get('xoa/{id},TinTucController@getXoa');
+		Route::get('xoa/{id}','TinTucController@getXoa');
+	});
+
+	Route::group(['prefix'=>'comment'],function(){
+
+		Route::get('xoa/{id}/{idTinTuc}','CommentController@getXoa');
 	});
 
 	Route::group(['prefix'=>'user'],function(){
@@ -111,6 +122,19 @@ Route::post('/dangky', 'PagesController@postDangKy');
 Route::get('/dangxuat', 'PagesController@getDangXuat');
 Route::get('/nguoidung', 'PagesController@getNguoiDung');
 Route::post('/nguoidung', 'PagesController@postNguoiDung');
+Route::get('home','PagesController@home');
+
+Route::get('contact','PagesController@contact');
+
+Route::get('loaitin/{id}/{TenKhongDau}.html','PagesController@loaitin');
+// Route::get('try',function(){
+// 	$theloai=TheLoai::find(1);
+// 	foreach($theloai->loaitin as $loaitin){
+// 		echo $loaitin->Ten."<br>";
+// 	}
+// });
+
+// Route::group(['prefix'=>'loaitin'],function(){
 
 Route::get('/trangchu', 'PagesController@getTrangChu');
 

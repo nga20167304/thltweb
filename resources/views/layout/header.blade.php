@@ -1,29 +1,35 @@
-<!-- USING BOOTSTRAP 3.0.3 -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{url('trangchu')}}">Logo</a>
-        </div>
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{url('trangchu')}}">Tin Tức</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Giới thiệu</a>
+                    </li>
+                    <li>
+                        <a href="#">Liên hệ</a>
+                    </li>
+                </ul>
 
+                <form class="navbar-form navbar-left" role="search">
+			        <div class="form-group">
+			          <input type="text" class="form-control" placeholder="Search">
+			        </div>
+			        <button type="submit" class="btn btn-default">Submit</button>
+			    </form>
 
-        <div class="navbar-content">
-            <form action="timkiem" method="post" class="navbar-form navbar-search-form search active" role="search">
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <input name="tukhoa" type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-                        </span>
-                    </div>
-                </div>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
+			    <ul class="nav navbar-nav navbar-right">
                 <?php $nguoidung = \Illuminate\Support\Facades\Auth::user() ?>
                 @if(!isset($nguoidung))
                     <li><a href="{{url('dangky')}}">Đăng ký</a></li>
@@ -35,6 +41,11 @@
                     </li>
                 @endif
             </ul>
+            </div>
+
+
+            
+            <!-- /.navbar-collapse -->
         </div>
-    </div>
-</nav>
+        <!-- /.container -->
+    </nav>
