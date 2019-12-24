@@ -75,8 +75,8 @@
 						<span class="txt1">
 							Forgot
 						</span>
-                    <a class="txt2" href="#">
-                        Username / Password?
+                    <a class="txt2" href="{{url('password/reset')}}">
+                        Password?
                     </a>
                 </div>
 
