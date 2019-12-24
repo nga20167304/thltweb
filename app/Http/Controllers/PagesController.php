@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Slide;
+use App\TheLoai;
 use Illuminate\Support\Facades\View;
 
 class PagesController extends Controller
@@ -149,4 +150,6 @@ class PagesController extends Controller
             ->orWhere('NoiDung', 'like', "%$tukhoa%")
             ->take(30)->paginate(5);
         return view('pages.timkiem', ['tintuc' => $tintuc, 'tukhoa' => $tukhoa]);
+    }
+}
 
