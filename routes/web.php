@@ -122,11 +122,14 @@ Route::post('/dangky', 'PagesController@postDangKy');
 Route::get('/dangxuat', 'PagesController@getDangXuat');
 Route::get('/nguoidung', 'PagesController@getNguoiDung');
 Route::post('/nguoidung', 'PagesController@postNguoiDung');
+
 Route::get('home','PagesController@home');
 
 Route::get('contact','PagesController@contact');
 
 Route::get('loaitin/{id}/{TenKhongDau}.html','PagesController@loaitin');
+
+Route::get('tintuc/{id}/{TieuDeKhongDau}.html','PagesController@tintuc');
 // Route::get('try',function(){
 // 	$theloai=TheLoai::find(1);
 // 	foreach($theloai->loaitin as $loaitin){
@@ -136,7 +139,7 @@ Route::get('loaitin/{id}/{TenKhongDau}.html','PagesController@loaitin');
 
 // Route::group(['prefix'=>'loaitin'],function(){
 
-Route::get('/trangchu', 'PagesController@getTrangChu');
+// Route::get('/trangchu', 'PagesController@getTrangChu');
 
 Route::post('/timkiem','PagesController@timkiem');
 
