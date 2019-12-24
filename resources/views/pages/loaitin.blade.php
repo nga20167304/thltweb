@@ -24,7 +24,7 @@
                         <div class="col-md-9">
                             <h3>{{$tt->TieuDe}}</h3>
                             <p>{{$tt->TomTat}}</p>
-                            <a class="btn btn-primary" href="detail.html">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            <a class="btn btn-primary" href="detail.html">Xem Thêm <span class="glyphicon glyphicon-chevron-right"></span></a>
                         </div>
                         <div class="break"></div>
                     </div>
