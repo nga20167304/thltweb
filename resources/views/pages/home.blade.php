@@ -34,7 +34,7 @@
 		                	?>
 		                	<div class="col-md-8 border-right">
 		                		<div class="col-md-5">
-			                        <a href="detail.html">
+			                        <a href="tintuc/$tin1['id']/$tin1['TieuDeKhongDau].html">
 			                            <img class="img-responsive" src="upload/tintuc/{{$tin1->Hinh}}" alt="">
 			                        </a>
 			                    </div>
@@ -51,7 +51,8 @@
 		                    <br>
 							<div class="col-md-4">
 								@foreach($data->all() as $tintuc)
-									<a href="detail.html">
+									<a href="tintuc/$tt[
+			                        	'id']/$tt['TieuDeKhongDau'].html.html">
 										<h4>
 											<span class="glyphicon glyphicon-list-alt"></span>
 											{{$tintuc['TieuDe']}}

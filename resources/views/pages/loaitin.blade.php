@@ -15,7 +15,7 @@
                     <div class="row-item row">
                         <div class="col-md-3">
 
-                            <a href="detail.html">
+                            <a href="tintuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html">
                                 <br>
                                 <img width="200px" height="200px" class="img-responsive" src="upload/tintuc/{{$tt->Hinh}}" alt="">
                             </a>
@@ -24,7 +24,11 @@
                         <div class="col-md-9">
                             <h3>{{$tt->TieuDe}}</h3>
                             <p>{{$tt->TomTat}}</p>
+<!-- <<<<<<< HEAD -->
                             <a class="btn btn-primary" href="detail.html">Xem Thêm <span class="glyphicon glyphicon-chevron-right"></span></a>
+<!-- =======
+                            <a class="btn btn-primary" href="tintuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+>>>>>>> tintuc -->
                         </div>
                         <div class="break"></div>
                     </div>
