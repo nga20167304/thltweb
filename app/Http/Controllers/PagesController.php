@@ -33,9 +33,18 @@ class PagesController extends Controller
     }
 
     public function loaitin($id){
+        $theloai=TheLoai::all();
         $loaitin=LoaiTin::find($id);
         $tintuc=TinTuc::where('idLoaiTin',$id)->paginate(5);
-        return view('pages.loaitin',['loaitin'=>$loaitin,'tintuc'=>$tintuc]);
+        return view('pages.loaitin',['loaitin'=>$loaitin,'tintuc'=>$tintuc,'theloai'=>$theloai]);
+    }
+
+    public function tintuc($id){
+        $tintuc = TinTuc::find($id);
+        $tinnoibat=TinTuc::where('NoiBat',1)->take(4)->get();
+        $tinlienquan=TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->take(4)->get();
+        return view('pages.tintuc',['tintuc'=>$tintuc,'tinnoibat'=>$tinnoibat,
+            'tinlienquan'=>$tinlienquan]);
     }
 
     public function getDangNhap()
