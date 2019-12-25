@@ -64,7 +64,7 @@ class PagesController extends Controller
             'password.max' => 'Mật khẩu tối đa 32 ký tự'
         ]);
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect('trangchu');
+            return redirect('home');
         } else {
             return redirect('dangnhap')->with('thongbao', 'Email hoặc mật khẩu không đúng');
         }
@@ -95,7 +95,7 @@ class PagesController extends Controller
         $user->quyen = 0;
         $isSuccess = $user->save();
         if ($isSuccess) {
-            return redirect('trangchu');
+            return redirect('home');
         } else {
             return redirect('dangky')->with('thongbao', 'Đăng ký thất bại');
         }
@@ -104,7 +104,7 @@ class PagesController extends Controller
     function getDangXuat()
     {
         Auth::logout();
-        return redirect('trangchu');
+        return redirect('home');
     }
 
     function getNguoiDung()
@@ -160,5 +160,6 @@ class PagesController extends Controller
             ->take(30)->paginate(5);
         return view('pages.timkiem', ['tintuc' => $tintuc, 'tukhoa' => $tukhoa]);
     }
+   
 }
 

@@ -17,6 +17,7 @@
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
     <link href="css/my.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
 
     @yield('css')
 

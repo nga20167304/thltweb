@@ -26,7 +26,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 		Route::get('danhsach','TheLoaiController@getDanhSach');
 
-		Route::get('sua/{id}','TheLoaiController@getSua'); 
+		Route::get('sua/{id}','TheLoaiController@getSua');
 
 		Route::post('sua/{id}','TheLoaiController@postSua');
 
@@ -129,16 +129,6 @@ Route::get('contact','PagesController@contact');
 
 Route::get('loaitin/{id}/{TenKhongDau}.html','PagesController@loaitin');
 
-Route::get('tintuc/{id}/{TieuDeKhongDau}.html','PagesController@tintuc');
-// Route::get('try',function(){
-// 	$theloai=TheLoai::find(1);
-// 	foreach($theloai->loaitin as $loaitin){
-// 		echo $loaitin->Ten."<br>";
-// 	}
-// });
-
-// Route::group(['prefix'=>'loaitin'],function(){
-
 // Route::get('/trangchu', 'PagesController@getTrangChu');
 
 Route::post('/timkiem','PagesController@timkiem');
@@ -150,4 +140,4 @@ Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
