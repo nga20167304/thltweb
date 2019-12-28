@@ -30,9 +30,9 @@
                 <img src="images/img-01.png" alt="IMG">
             </div>
 
-            <form class="login100-form validate-form" action="/dangnhap" method="post">
+            <form class="login100-form validate-form" action="dangnhap" method="post">
 					<span class="login100-form-title">
-						Member Login
+						Đăng Nhập
 					</span>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
@@ -53,7 +53,7 @@
 
                 @if(count($errors) > 0)
                     <div class="alert alert-danger">
-                        @foreach($errors as $err)
+                        @foreach($errors->all() as $err)
                             {{$err}}<br>
                         @endforeach
                     </div>
@@ -67,7 +67,7 @@
 
                 <div class="container-login100-form-btn">
                     <button class="login100-form-btn">
-                        Login
+                        Đăng Nhập
                     </button>
                 </div>
 

@@ -77,17 +77,26 @@ class PagesController extends Controller
 
     public function postDangKy(Request $request)
     {
-        $this->validate($request, [
-            'email' => 'required|email|unique:users,email',
-            'name' => 'required',
-            'password' => 'required|min:6|max:32'
-        ], [
-            'email.required' => 'Bạn chưa nhập Email',
-            'name.required' => 'Bạn chưa nhập Tên',
-            'password.required' => 'Bạn chưa nhập mật khẩu',
-            'password.min' => 'Mật khẩu tối thiểu 6 ký tự và không chứa khoảng trắng',
-            'password.max' => 'Mật khẩu tối đa 32 ký tự'
-        ]);
+        $this->validate($request,
+            [
+                'name' => 'required|min:3',
+                'email' => 'required|email|unique:users,email',
+                'password' => 'required| min:6|max:32',
+                'passwordAgain' => 'required|same:password'
+            ],
+            [
+                'name.required' => 'Bạn chưa nhập tên người dùng',
+                'name.min' => 'tên người dùng phải ít nhất 3 kí tự',
+                'email.required'=> 'Bạn chưa nhập email',
+                'email.email'=>'bạn chhuwa nhập đúng định dạng email',
+                'email.unique'=>'Email đã tồn tại',
+                'password.required'=>'Bạn chưa nhập mật khẩu',
+                'password.min'=>'Mật khẩu phải có ít nhất 6 kí tự',
+                'password.max'=>'Mật khẩu có nhiều nhất 32 kí tự',
+                'passwordAgain.required'=>'Bạn chưa nhập lại mật khẩu',
+                'passwordAgain.same'=>'Mật khẩu chưa khớp'
+
+            ]);
         $user = new User;
         $user->name = $request->name;
         $user->email = $request->email;
@@ -95,7 +104,7 @@ class PagesController extends Controller
         $user->quyen = 0;
         $isSuccess = $user->save();
         if ($isSuccess) {
-            return redirect('home');
+            return redirect('dangnhap');
         } else {
             return redirect('dangky')->with('thongbao', 'Đăng ký thất bại');
         }

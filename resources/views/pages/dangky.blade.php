@@ -30,9 +30,11 @@
                 <img src="images/img-01.png" alt="IMG">
             </div>
 
-            <form class="login100-form validate-form" action="/dangky" method="post">
+            
+
+            <form class="login100-form validate-form" action="dangky" method="post">
 					<span class="login100-form-title">
-						Member Sign up
+						Đăng kí người dùng
 					</span>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
@@ -44,7 +46,7 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Name is required">
-                    <input class="input100" type="text" name="name" placeholder="Name">
+                    <input class="input100" type="text" name="name" placeholder="Tên">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -52,29 +54,38 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Password is required">
-                    <input class="input100" type="password" name="password" placeholder="Password">
+                    <input class="input100" type="password" name="password" placeholder="Mật khẩu">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
                 </div>
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <input class="input100" type="password" name="passwordAgain" placeholder="Nhập lại mật khẩu">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                </div>
 
                 @if(count($errors) > 0)
                     <div class="alert alert-danger">
-                        @foreach($errors as $err)
+                        @foreach($errors->all() as $err)
                             {{$err}}<br>
                         @endforeach
                     </div>
-                @endif
+                 @endif
 
                 @if(session('thongbao'))
                     <div class="alert alert-danger">
-                        {{session('thongbao')}}
+                         {{session('thongbao')}}
                     </div>
                 @endif
 
+                
+
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
+                    <button type = "submit" class="login100-form-btn">
                         Tạo tài khoản
                     </button>
                 </div>

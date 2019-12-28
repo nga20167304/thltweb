@@ -115,13 +115,13 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 	});
 });
 
-Route::get('/dangnhap', 'PagesController@getDangNhap');
-Route::post('/dangnhap', 'PagesController@postDangNhap');
-Route::get('/dangky', 'PagesController@getDangKy');
-Route::post('/dangky', 'PagesController@postDangKy');
-Route::get('/dangxuat', 'PagesController@getDangXuat');
-Route::get('/nguoidung', 'PagesController@getNguoiDung');
-Route::post('/nguoidung', 'PagesController@postNguoiDung');
+Route::get('dangnhap', 'PagesController@getDangNhap');
+Route::post('dangnhap', 'PagesController@postDangNhap');
+Route::get('dangky', 'PagesController@getDangKy');
+Route::post('dangky', 'PagesController@postDangKy');
+Route::get('dangxuat', 'PagesController@getDangXuat');
+Route::get('nguoidung', 'PagesController@getNguoiDung');
+Route::post('nguoidung', 'PagesController@postNguoiDung');
 
 Route::get('home','PagesController@home');
 
