@@ -124,6 +124,7 @@ Route::get('nguoidung', 'PagesController@getNguoiDung');
 Route::post('nguoidung', 'PagesController@postNguoiDung');
 
 Route::get('home','PagesController@home');
+Route::get('tintuc/{id}/{TieuDeKhongDau}','PagesController@tintuc');
 
 Route::get('contact','PagesController@contact');
 
