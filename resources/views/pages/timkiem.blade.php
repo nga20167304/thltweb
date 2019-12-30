@@ -26,7 +26,7 @@
 
                             <div class="col-md-9">
                                 <h3>{{$tt->TieuDe}}</h3>
-                                <p>{{$tt->TomTat}}</p>
+                                <p>{!! html_entity_decode($tt->TomTat) !!}</p>
                                 <a class="btn btn-primary" href="tintuc/{{$tt->id}}/{{$tt->TieuDeKhongDau}}.html">Xem thêm
                                 <span class="glyphicon glyphicon-chevron-right"></span>
                                 </a>
@@ -34,7 +34,8 @@
                         </div>
                     @endforeach
                     <div style="text-align: center;">
-                        {{$tintuc->links()}}
+
+                        {{$tintuc->appends(request()->query())->links()}}
                     </div>
                 </div>
             </div>

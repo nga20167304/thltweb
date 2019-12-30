@@ -3,71 +3,65 @@
     <!-- Page Content -->
     <div class="container">
 
-    	@include('layout.slide')
+        @include('layout.slide')
 
         <div class="space20"></div>
 
 
         <div class="row main-left">
-        	@include('layout.menu')
+            @include('layout.menu')
             <div class="col-md-9">
-	            <div class="panel panel-default">            
-	            	<div class="panel-heading" style="background-color:#337AB7; color:white;" >
-	            		<h2 style="margin-top:0px; margin-bottom:0px;">Laravel Tin Tức</h2>
-	            	</div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color:#337AB7; color:white;">
+                        <h2 style="margin-top:0px; margin-bottom:0px;">Laravel Tin Tức</h2>
+                    </div>
 
-	            	<div class="panel-body">
-	            		@foreach($theloai as $tl)
-	            			@if(count($tl->loaitin)>0)
-	            		<!-- item -->
-					    <div class="row-item row">
-		                	<h3>
-		                		<a href="#">{{$tl->Ten}}</a> | 	
-		                		@foreach($tl->loaitin as $lt)
-		                			<small><a href="loatin/{{$lt->id}}/{{$lt->TenKhongDau}}.html"><i>{{$lt->Ten}}</i></a>/</small>
-		                		@endforeach
-		                	</h3>
+                    <div class="panel-body">
+                    @foreach($theloai as $tl)
+                        @if(count($tl->loaitin)>0)
+                            <!-- item -->
+                                <div class="row-item row">
+                                    <h3>
+                                        <span href="">{{$tl->Ten}}</span> |
+                                        @foreach($tl->loaitin as $lt)
+                                            <small><a class="home-loaitin-small"
+                                                      href="loaitin/{{$lt->id}}/{{$lt->TenKhongDau}}.html"><i>{{$lt->Ten}}</i></a>/</small>
+                                        @endforeach
+                                    </h3>
 
-		                	<?php 
-		                		$data= $tl->tintuc->where('NoiBat',1)->sortByDesc('created_at')->take(5);
-		                		$tin1=$data->shift();
-		                	?>
-		                	<div class="col-md-8 border-right">
-		                		<div class="col-md-5">
-			                        <a href="tintuc/{{$tin1->id}}/{{$tin1->TieuDeKhongDau}}.html">
-			                            <img class="img-responsive" src="upload/tintuc/{{$tin1->Hinh}}" alt="">
-			                        </a>
-			                    </div>
-			                    <div class="col-md-7">
-			                        <h3>{{$tin1['TieuDe']}}</h3>
-			                        <p>{{$tin1['TomTat']}}</p>
-			                        <a class="btn btn-primary" href="tintuc/{{$tin1->id}}/{{$tin1->TieuDeKhongDau}}.html">Xem thêm <span class="glyphicon glyphicon-chevron-right"></span></a>
-								</div>
+                                    <?php
+                                    $data = $tl->tintuc->where('NoiBat', 1)->sortByDesc('created_at')->take(4);
+                                    $tin1 = $data->shift();
+                                    ?>
+                                    <div class="col-md-12">
+                                        @foreach($data as $d)
+                                            <div class="col-md-4" style="padding: 0; margin: 0;">
+                                                <a href="tintuc/{{$d->id}}/{{$d->TieuDeKhongDau}}.html">
+                                                    <img style="height: 150px; object-fit: cover; object-position: bottom;"
+                                                         class="img-responsive" src="upload/tintuc/{{$d->Hinh}}"
+                                                         width="100%" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <h3 style="margin-top: 0;">{{$d['TieuDe']}}</h3>
+                                                <p>
+                                                    {{$tin1['TomTat']}}
+                                                    <a style="color: #337AB7"
+                                                       href="tintuc/{{$d->id}}/{{$d->TieuDeKhongDau}}.html">Đọc
+                                                        tiếp...</a>
+                                                </p>
+                                            </div>
+                                            <div class="break tintuc-break"></div>
+                                        @endforeach
+                                    </div>
 
-		                	</div>
-		                    <br>
-			                <br>
-		                    <br>
-		                    <br>
-							<div class="col-md-4">
-								@foreach($data->all() as $tintuc)
-									<a href="tintuc/{{$tintuc->
-			                        	id}}/{{$tintuc->TieuDeKhongDau}}.html.html">
-										<h4>
-											<span class="glyphicon glyphicon-list-alt"></span>
-											{{$tintuc['TieuDe']}}
-										</h4>
-									</a>
-								@endforeach
-							
-							<div class="break"></div>
-		                </div>
-		                <!-- end item -->
-		                	@endif
-		                @endforeach
-					</div>
-	            </div>
-        	</div>
+                                </div>
+                                <!-- end item -->
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /.row -->
     </div>

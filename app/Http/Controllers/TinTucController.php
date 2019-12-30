@@ -8,6 +8,7 @@ use App\LoaiTin;
 use App\TheLoai;
 use App\TinTuc;
 use App\Comment;
+use Illuminate\Support\Str;
 
 class TinTucController extends Controller
 {
@@ -52,10 +53,10 @@ class TinTucController extends Controller
                 return redirect('admin/tintuc/them')->with('error','Chỉ được thêm ảnh dưới dạng đuôi jpg,png hoặc jpeg');
             }
             $name=$file->getClientOriginalName();
-            $Hinh = str_random(4)."_".$name;
+            $Hinh = Str::random(4)."_".$name;
             while(file_exists("upload/tintuc/" .$Hinh))
             {
-                $Hinh = str_random(4)."_".$name;
+                $Hinh = Str::random(4)."_".$name;
             }
             $file->move("upload/tintuc",$Hinh);
             $tintuc->Hinh=$Hinh;
@@ -108,10 +109,10 @@ class TinTucController extends Controller
                 return redirect('admin/tintuc/them')->with('error','Chỉ được thêm ảnh dưới dạng đuôi jpg,png hoặc jpeg');
             }
             $name=$file->getClientOriginalName();
-            $Hinh = str_random(4)."_".$name;
+            $Hinh = Str::random(4)."_".$name;
             while(file_exists("upload/tintuc/" .$Hinh))
             {
-                $Hinh = str_random(4)."_".$name;
+                $Hinh = Str::random(4)."_".$name;
             }
 
             $file->move("upload/tintuc",$Hinh);

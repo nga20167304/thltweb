@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\LoaiTin;
 use App\TinTuc;
 use App\User;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Slide;
 use App\TheLoai;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 
 class PagesController extends Controller
@@ -30,6 +32,10 @@ class PagesController extends Controller
     public function contact(){
         $theloai=TheLoai::all();
         return view('pages.contact',['theloai'=>$theloai]);
+    }
+    public function gioithieu(){
+        $theloai = TheLoai::all();
+       return view('pages.gioithieu',['theloai'=>$theloai]);
     }
 
     public function loaitin($id){
@@ -104,7 +110,11 @@ class PagesController extends Controller
         $user->quyen = 0;
         $isSuccess = $user->save();
         if ($isSuccess) {
-            return redirect('dangnhap');
+            if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+                return redirect('home');
+            } else {
+                return redirect('dangnhap');
+            }
         } else {
             return redirect('dangky')->with('thongbao', 'Đăng ký thất bại');
         }
@@ -169,6 +179,14 @@ class PagesController extends Controller
             ->take(30)->paginate(5);
         return view('pages.timkiem', ['tintuc' => $tintuc, 'tukhoa' => $tukhoa]);
     }
-   
+
+    public function postComment(Request $request, $id) {
+        $comment = new Comment();
+        $comment->idUser = Auth::user()->id;
+        $comment->idTinTuc = $id;
+        $comment->NoiDung = $request->comment;
+        $comment->save();
+        return redirect("tintuc/$id/$request->TieuDeKhongDau.html");
+    }
 }
 

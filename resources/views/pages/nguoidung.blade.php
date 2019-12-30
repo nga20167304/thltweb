@@ -64,5 +64,16 @@
             });
 
         })
+        // $(document).ready(function () {
+        //     enable_cb();
+        //     $("#changePassword").click(enable_cb());
+        // });
+        // function enable_cb() {
+        //     if(this.checked){
+        //         $("input.password").removeAttr("disabled");
+        //     } else{
+        //         $("input.password").attr("disabled", true);
+        //     }
+        // }
     </script>
 @endsection
