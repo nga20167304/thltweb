@@ -13,9 +13,12 @@
 
 use App\TheLoai;
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('home');
 });
 
+Route::get('/admin', function () {
+    return redirect('admin/dangnhap');
+});
 Route::get('admin/dangnhap','UserController@getDangnhapAdmin');
 Route::post('admin/dangnhap','UserController@postDangnhapAdmin');
 Route::get('admin/logout','UserController@getDangXuatAdmin');
@@ -125,14 +128,15 @@ Route::post('nguoidung', 'PagesController@postNguoiDung');
 
 Route::get('home','PagesController@home');
 Route::get('tintuc/{id}/{TieuDeKhongDau}','PagesController@tintuc');
+Route::post('tintuc/{id}/postComment', 'PagesController@postComment');
 
 Route::get('contact','PagesController@contact');
+Route::get('gioithieu','PagesController@gioithieu');
 
 Route::get('loaitin/{id}/{TenKhongDau}.html','PagesController@loaitin');
 
-// Route::get('/trangchu', 'PagesController@getTrangChu');
 
-Route::post('/timkiem','PagesController@timkiem');
+Route::get('/timkiem','PagesController@timkiem');
 
 Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
 Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');

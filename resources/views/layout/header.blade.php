@@ -15,15 +15,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Giới thiệu</a>
+                        <a href="/gioithieu">Giới thiệu</a>
                     </li>
                     <li>
-                        <a href="#">Liên hệ</a>
+                        <a href="/contact">Liên hệ</a>
                     </li>
                 </ul>
 
-                <form class="navbar-form navbar-left" role="search" action="{{url('timkiem')}}" method="post">
-                    @csrf
+                <form class="navbar-form navbar-left" role="search" action="{{url('timkiem')}}" method="get">
 			        <div class="form-group">
 			          <input type="text" name="tukhoa" class="form-control" placeholder="Từ khóa">
 			        </div>

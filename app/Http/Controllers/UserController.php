@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -63,12 +64,12 @@ class UserController extends Controller
     	$this->validate($request,
     		[
     			'name' => 'required|min:3'
-    			
+
     		],
     		[
     			'name.required' => 'Bạn chưa nhập tên người dùng',
     			'name.min' => 'tên người dùng phải ít nhất 3 kí tự',
-    			
+
     		]);
     	$user = User::find($id);
     	$user->name = $request->name;
@@ -81,7 +82,7 @@ class UserController extends Controller
     			'passwordAgain' => 'required|same:password'
     		],
     		[
-    			
+
     			'password.required'=>'Bạn chưa nhập mật khẩu',
     			'password.min'=>'Mật khẩu phải có ít nhất 6 kí tự',
     			'password.max'=>'Mật khẩu có nhiều nhất 32 kí tự',
@@ -95,13 +96,14 @@ class UserController extends Controller
     	$user->save();
 
     	return redirect('admin/user/sua/'.$id)->with('thongbao', 'Thay đổi thành công');
-    		  
+
 
     }
 
     public function getXoa($id){
     	$user = User::find($id);
-    	$user->delete();
+        DB::table('comment')->where('idUser', $id)->delete();
+        $user->delete();
     	return redirect('admin/user/danhsach')->with('thongbao','Xóa người dùng thành công!');
 
     }
