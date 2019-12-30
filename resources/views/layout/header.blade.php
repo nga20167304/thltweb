@@ -15,10 +15,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/gioithieu">Giới thiệu</a>
+                        <a href="{{url('gioithieu')}}">Giới thiệu</a>
                     </li>
                     <li>
-                        <a href="/contact">Liên hệ</a>
+                        <a href="{{url('contact')}}">Liên hệ</a>
                     </li>
                 </ul>
 

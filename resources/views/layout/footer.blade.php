@@ -19,7 +19,6 @@
                     <div class="col-lg-3 col-sm-2 col-xs-3">
                         <ul>
                             <li> <h5> <a href="#" style="margin-top: 5em"> ABOUT US</a> </h5></li>
-                            <li> <h5><a href="#">  </a> </h5></li>
                             <li> <h5><a href="#"> THE HOUSE </a> </h5></li>
                             <li> <h5><a href="#"> LOOKING BACK </a> </h5></li>
                         </ul>
