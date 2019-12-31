@@ -19,9 +19,11 @@
                     <div class="col-lg-3 col-sm-2 col-xs-3">
                         <h3> FOLLOW US </h3>
                         <ul>
+
                             <li> <h5><a href="#"> Instagram </a> </h5></li>
                             <li> <h5><a href="#"> Facebook </a> </h5></li>
                             <li> <h5><a href="#"> Twitter </a> </h5></li>
+                 
                         </ul>
                     </div>
 

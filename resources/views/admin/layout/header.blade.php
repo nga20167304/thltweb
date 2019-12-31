@@ -7,7 +7,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Web tin tuc</a>
+                <a class="navbar-brand" href="{{url('home')}}">Web tin tuc</a>
             </div>
             <!-- /.navbar-header -->
 
