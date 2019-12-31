@@ -45,7 +45,7 @@
                                             <div class="col-md-7">
                                                 <h3 style="margin-top: 0;">{{$d['TieuDe']}}</h3>
                                                 <p>
-                                                    {{$tin1['TomTat']}}
+                                                    {{$d['TomTat']}}
                                                     <a style="color: #337AB7"
                                                        href="tintuc/{{$d->id}}/{{$d->TieuDeKhongDau}}.html">Đọc
                                                         tiếp...</a>
