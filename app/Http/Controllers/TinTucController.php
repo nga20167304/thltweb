@@ -8,11 +8,11 @@ use App\LoaiTin;
 use App\TheLoai;
 use App\TinTuc;
 use App\Comment;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class TinTucController extends Controller
 {
-    //
 
     public function getDanhSach(){
     	$tintuc = TinTuc::orderBy('id','DESC')->get();
@@ -83,7 +83,7 @@ class TinTucController extends Controller
         $tintuc=TinTuc::find($id);
         $this->validate($request,[
             'LoaiTin'=>'required',
-            'TieuDe'=>'required|min:3|unique:TinTuc,TieuDe',
+            'TieuDe'=>'required|min:3|unique:TinTuc,TieuDe,'.$id,
             'TomTat'=>'required',
             'NoiDung'=>'required'
         ],[
@@ -128,8 +128,16 @@ class TinTucController extends Controller
 
     public function getXoa($id){
         $tintuc=TinTuc::find($id);
+        DB::table('comment')->where('idTinTuc',$id)->delete();
         $tintuc->delete();
 
         return redirect('admin/tintuc/danhsach')->with('thongbao','Bạn đã xóa thành công');
+    }
+
+    public function getXoaComment($id,$idTinTuc){
+        $comment=Comment::find($id);
+        $comment->delete();
+
+        return redirect('admin/tintuc/sua/'.$idTinTuc)->with('thongbao','Xóa comment thành công');
     }
 }

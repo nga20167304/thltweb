@@ -27,7 +27,7 @@
 
                 <!-- Post Content -->
                 <p class="lead">
-                    {!! $tintuc->NoiDung !!}
+                    {!! html_entity_decode($tintuc->NoiDung) !!}
                 </p>
 
                 <hr>

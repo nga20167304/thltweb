@@ -33,7 +33,7 @@
                                 <label>Thể loại</label>
                                 <select class="form-control" name="TheLoai" id="TheLoai">
                                     @foreach($theloai as $tl)
-                                    <option 
+                                    <option
                                     @if( $tintuc->loaitin->theloai->id == $tl->id)
                                     {{"selected"}}
                                     @endif
@@ -45,7 +45,7 @@
                                 <label>Loại tin</label>
                                 <select class="form-control" name="LoaiTin" id="LoaiTin">
                                     @foreach($loaitin as $lt)
-                                    <option 
+                                    <option
                                     @if( $tintuc->loaitin->id == $lt->id)
                                     {{"selected"}}
                                     @endif
@@ -59,11 +59,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Tóm tắt</label>
-                                <textarea id="demo" class="form-control ckeditor" rows="3" name="TomTat" value="{{$tintuc->TomTat}}"></textarea>
+                                <textarea id="demo" class="form-control ckeditor" rows="3" name="TomTat">{{$tintuc->TomTat}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label>Nội dung</label>
-                                <textarea id="demo" class="form-control ckeditor" rows="5"name="NoiDung" value="{{$tintuc->NoiDung}}"></textarea>
+                                <textarea id="demo" class="form-control ckeditor" rows="5"name="NoiDung" >{{$tintuc->NoiDung}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label>Hình ảnh</label>
@@ -73,23 +73,23 @@
                             <div class="form-group">
                                 <label>Nổi bật</label>
                                 <label class="radio-inline">
-                                    <input name="NoiBat" value="1" 
-                                    @if($tintuc->NoiBat==1) 
-                                        {{"checked"}} 
+                                    <input name="NoiBat" value="1"
+                                    @if($tintuc->NoiBat==1)
+                                        {{"checked"}}
                                     @endif
                                     type="radio">Có
                                 </label>
 
                                 <label class="radio-inline">
-                                    <input name="NoiBat" value="0" 
-                                    @if($tintuc->NoiBat==1) 
-                                        {{"checked"}} 
+                                    <input name="NoiBat" value="0"
+                                    @if($tintuc->NoiBat==1)
+                                        {{"checked"}}
                                     @endif
                                     type="radio">Không
                                 </label>
                             </div>
                             <button type="submit" class="btn btn-default">Sửa</button>
-                            <button type="reset" class="btn btn-default">Làm mới</button>
+                            <button type="reset" class="btn btn-default" id="bt-reset">Làm mới</button>
                         <form>
                     </div>
                 </div>
@@ -145,6 +145,9 @@
                 $.get("admin/ajax/loaitin/"+idTheLoai,function(data){
                     $("#LoaiTin").html(data);
                 });
+            });
+            $('#bt-reset').click(function () {
+                location.reload();
             });
         });
     </script>
