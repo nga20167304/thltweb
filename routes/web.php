@@ -84,7 +84,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 	Route::group(['prefix'=>'comment'],function(){
 
-		Route::get('xoa/{id}/{idTinTuc}','CommentController@getXoa');
+		Route::get('xoa/{id}/{idTinTuc}','TinTucController@getXoaComment');
 	});
 
 	Route::group(['prefix'=>'user'],function(){

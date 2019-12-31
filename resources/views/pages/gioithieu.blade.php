@@ -24,7 +24,7 @@
                         <h4>Nguyễn Thị Hồng Hạnh - 20166061</h4>
 
                         <span class= "glyphicon glyphicon-user"></span>
-                        <h4>Đặng Thị Hoa - 20166000</h4>
+                        <h4>Đặng Thị Hoa - 20161600</h4>
                     </div>
                 </div>
             </div>

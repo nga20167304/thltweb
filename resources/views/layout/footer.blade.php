@@ -17,11 +17,11 @@
                         </ul>
                     </div>
                     <div class="col-lg-3 col-sm-2 col-xs-3">
+                        <h3> FOLLOW US </h3>
                         <ul>
-                            <li> <h5> <a href="#" style="margin-top: 5em"> ABOUT US</a> </h5></li>
-                            <li> <h5><a href="#">  </a> </h5></li>
-                            <li> <h5><a href="#"> THE HOUSE </a> </h5></li>
-                            <li> <h5><a href="#"> LOOKING BACK </a> </h5></li>
+                            <li> <h5><a href="#"> Instagram </a> </h5></li>
+                            <li> <h5><a href="#"> Facebook </a> </h5></li>
+                            <li> <h5><a href="#"> Twitter </a> </h5></li>
                         </ul>
                     </div>
 
@@ -31,12 +31,12 @@
             </div>
             <!--/.footer-->
 
-            <div class="footer-bottom">
-                <div class="container">
-                    <p class="pull-left copyright"> </p>
+{{--            <div class="footer-bottom">--}}
+{{--                <div class="container">--}}
+{{--                    <p class="pull-left copyright"> </p>--}}
 
-                </div>
-            </div>
+{{--                </div>--}}
+{{--            </div>--}}
             <!--/.footer-bottom-->
         </div>
     </footer>
