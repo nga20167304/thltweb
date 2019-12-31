@@ -59,7 +59,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Tóm tắt</label>
-                                <textarea id="demo" class="form-control ckeditor" rows="3" name="TomTat">{{$tintuc->TomTat}}</textarea>
+                                <textarea class="form-control" rows="3" name="TomTat">{{$tintuc->TomTat}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label>Nội dung</label>
